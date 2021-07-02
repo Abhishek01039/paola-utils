@@ -40,7 +40,7 @@ exports.addStudentToCohort = async (cohortId, student) => {
   }
 };
 
-// Validate that a student is enrolled in a cohort
+// Validate that a student is enrolled in a cohort by email
 exports.validateStudentEnrollment = async (cohortId, email) => {
   try {
     const students = await exports.getAllStudentsInCohort(cohortId);
@@ -53,7 +53,7 @@ exports.validateStudentEnrollment = async (cohortId, email) => {
   }
 };
 
-// Validate that a student is enrolled in a cohort
+// Validate that a student is enrolled in a cohort by id
 exports.validateStudentEnrollmentByID = async (cohortId, id) => {
   try {
     const students = await exports.getAllStudentsInCohort(cohortId);
@@ -66,7 +66,7 @@ exports.validateStudentEnrollmentByID = async (cohortId, id) => {
   }
 };
 
-// Delete a student from a cohort
+// Delete a student from a cohort by email
 exports.removeStudentFromCohort = async (cohortId, email) => {
   try {
     const students = await exports.getAllStudentsInCohort(cohortId);
@@ -85,6 +85,7 @@ exports.removeStudentFromCohort = async (cohortId, email) => {
   }
 };
 
+// Delete a student from a cohort by id
 exports.removeStudentFromCohortByID = async (cohortId, id) => {
   try {
     const response = await fetch(
